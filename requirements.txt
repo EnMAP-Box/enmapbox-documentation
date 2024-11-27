@@ -9,3 +9,5 @@ docutils
 sphinx_rtd_theme > 1
 sphinx-copybutton
 myst_parser
+urlchecker
+doc8

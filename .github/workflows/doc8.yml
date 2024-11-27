@@ -1,0 +1,26 @@
+name: Check RST Style
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Check RST Style
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Install dependencies
+      run: |
+        python3 --version
+        pip list
+        pip install -U -r requirements.txt
+        pwd
+        ls -lisa
+    - name: Run doc8
+      run: |
+        doc8 source
+
